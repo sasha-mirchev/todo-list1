@@ -1,28 +1,33 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import TodoList from "./TodoList";
+import TodoCreateForm from "./TodoCreateForm";
+
+const initialTodos = [
+    {id: 1, name: 'Alex', done: false},
+    {id: 2, name: 'Vasilisa', done: false},
+    {id: 3, name: 'Nazar', done: false},
+    {id: 4, name: 'Aya', done: true},
+]
 
 
 function App() {
-    const [todo, setTodo] = useState({id: 1, name: 'ww'});
+const [todos, setTodos] = useState(initialTodos)
+    const onTaskCreate = task => {
+console.log('APP - '+task)
+const updateTodos = [...todos];
+updateTodos.push({id: Math.random(), name: task, done: false})
+        setTodos(updateTodos);
+    }
+
 
     return (
-        <div className="App">
-            <h1>Список задач! </h1>
+        <div >
 
-            <ul>
-                <li>
-                    {todo.id} - {todo.name}
-                </li>
-            </ul>
+<TodoCreateForm onTaskCreate = {onTaskCreate}/>
+            <TodoList todos ={todos}/>
 
-
-            <form className="add-tasks">
-                <input type='text' placeholder="Задачи на сегодня"/>
-                <button onClick={() => setTodo(todo.name,  todo.id + 1)}>
-                    Добавить задачу
-                </button>
-            </form>
 
         </div>
     );
