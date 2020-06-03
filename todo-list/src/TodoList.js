@@ -3,27 +3,38 @@ import './App.css';
 import App from "./App";
 
 
-
-
-
-
 function TodoList(props) {
     const dell = (id) => {
-        console.log('udalim'+ id)
-            }
+        console.log('udalim' + id)
+        props.onTaskDelete(id)
+    }
 
-       return (
-        <div >
+    return (
+        <div>
             {
-                props.todos.map(el =>  <li key={el.id}>{el.name + '    '}
-<button onClick={() => dell(el.id)}>  Del</button>
+                props.todos.map(el =>
+                    <table width='30%' >
+                    <tr>
 
-                </li>)
-            }
-        List
+             <td      key={el.id}> {el.name}
 
-        </div>
-    );
-}
+             </td>
+                        <td align='right'>
 
-export default TodoList;
+                            <button type="button" className="btn btn-dark" onClick={() => dell(el.id)}>Delete</button>
+                    </td>
+
+
+</tr>
+                </table>
+
+    )
+
+                }
+                List
+
+                </div>
+                );
+                }
+
+                export default TodoList;

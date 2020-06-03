@@ -18,14 +18,22 @@ function TodoCreateForm(props) {
     }
 
     return (
+
+
+
+
         <div >
 
             <input type="text" value={task} onChange={e => setTask(e.target.value)}/>
-            <button onClick={addTask}>Add task</button>
+
+            <button type="button" className="btn btn-primary" onClick={addTask}>Add task</button>
+
 <hr/>
 
 
         </div>
+
+
     );
 }
 
