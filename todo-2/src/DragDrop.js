@@ -4,25 +4,16 @@ import imgball from './ball.jpg';
 
 function DragDrop() {
     return (
-        <div className="input-group">
-            <input type="text" className="form-control" aria-label="Text input with dropdown button">
-                <div className="input-group-append">
-                    <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Dropdown
-                    </button>
-                    <div className="dropdown-menu">
-                        <a className="dropdown-item" href="#">Action</a>
-                        <a className="dropdown-item" href="#">Another action</a>
-                        <a className="dropdown-item" href="#">Something else here</a>
-                        <div role="separator" className="dropdown-divider"></div>
-                        <a className="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </div>
-        </input>
-
+        <div className="card" style="width: 18rem;">
+            <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" className="card-link">Card link</a>
+                <a href="#" className="card-link">Another link</a>
             </div>
-
-
+        </div>
 )
 }
 
